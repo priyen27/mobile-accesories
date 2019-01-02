@@ -43,10 +43,10 @@ export class ProductserviceService {
   getProductByCatname(cat_name:string){
     return this._http.get(this.prodbycatname+cat_name);
       }
-  // UpdateProduct(item:product)
-  // {
-  //     let body=JSON.stringify(item);
-  //     let head1=new HttpHeaders().set('Content-Type','application/json');
-  //   return this._http.put(this.product+item.pro_id,body,{headers:head1});
-  // }
+  UpdateProductWithoutimg(item:product)
+  {
+      let body=JSON.stringify(item);
+      let head1=new HttpHeaders().set('Content-Type','application/json');
+    return this._http.put(this.product+item.pro_id,body,{headers:head1});
+  }
 }

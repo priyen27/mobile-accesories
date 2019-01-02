@@ -24,18 +24,15 @@ soharr:number[]=[];
   pro_desc:string="";
   fk_cat_id:number;
   pro_id:number;
+  flag:boolean=false;
   selectedfile:File=null;
   constructor(private _acroute:ActivatedRoute,private _route:Router,private _product:ProductserviceService,private _category:CategoryService) { }
 
   addform(){}
   onUpdateProduct(){
-    // this._product.UpdateProduct(new product(this.pro_name,this.pro_img,this.pro_color,this.pro_price,this.pro_soh,this.pro_mfg,this.pro_desc,this.fk_cat_id)).subscribe(
-    //   (data:any)=>{
-    //     console.log(data);
-    //     alert("record updated succesfully");
-//   }
-// );
-const fd=new FormData();
+    if(this.flag)
+    {
+      const fd=new FormData();
 fd.append('pro_id',this.pro_id.toString());
 fd.append('pro_name',this.pro_name);
 fd.append('image',this.selectedfile,this.selectedfile.name);
@@ -56,6 +53,19 @@ this._product.UpdateProduct(fd).subscribe(
    this._route.navigate(['/product']);
   }
 );
+ }
+    else{
+
+      this._product.UpdateProductWithoutimg(new product(this.pro_name,this.pro_img,this.pro_color,this.pro_price,this.pro_soh,this.pro_mfg,this.pro_desc,this.fk_cat_id,this.pro_id)).subscribe(
+        (data:any)=>{
+          console.log(data);
+          alert("Updated succesfully");
+          this._route.navigate(['/product']);
+               }
+       );
+
+    }
+
 
 
 }
@@ -64,6 +74,7 @@ oncancel(){
 }
 onchange(value)
 {
+  this.flag=true;
   this.selectedfile=<File>value.target.files[0];
 }
   ngOnInit() {

@@ -6,11 +6,12 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary">MENU</mat-toolbar>
+    <mat-toolbar color="primary" routerLink="">MENU</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="">MANAGE CATEGORY</a>
-      <a mat-list-item href="/product">MANAGE PRODUCT</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="category">MANAGE CATEGORY</a>
+      <a mat-list-item routerLink="product">MANAGE PRODUCT</a>
+      <a mat-list-item routerLink="order">MANAGE ORDER</a>
+      <a mat-list-item routerLink="repair">MANAGE REPAIRING</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,9 +22,12 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">
+
+        </mat-icon>
       </button>
-      <span>projectfrontend</span>
+      <span><img src="../../assets/logo5.jpg" style="height: 70px;width:150px;"></span>
+      <button mat-raised-button color="accent" style="margin-left: 900px;" routerLink="">LOGIN</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -1,0 +1,66 @@
+<p><b style="font-size: 40px;">Login Page</b></p>
+<div class="container">
+  <form (ngSubmit)="addform(f)" #f="ngForm">
+
+    <div class="container">
+      <div class="form-group">
+        <label>USER_NAME</label>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Enter Email" name="pro_name" [(ngModel)]="user_name" id="user_name"
+          email required #username="ngModel">
+        </mat-form-field>
+        <div [hidden]="username.valid || username.untouched" >
+          <div [hidden]="username?.errors?.required">
+          <mat-error>Email is incoorect</mat-error>
+          </div>
+          <div [hidden]="!username?.errors?.required">
+              <mat-error>Email is required</mat-error>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label>PASSWORD</label>
+            <br>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Enter password" [type]="hide ? 'password' : 'text'" type="password" name="password" [(ngModel)]="password" id="password"
+              required #Password="ngModel">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <div [hidden]="Password.valid || Password.untouched" >
+              <div [hidden]="!Password?.errors?.required">
+                  <mat-error>Password is required</mat-error>
+                  </div>
+              </div>
+              <button mat-raised-button color="primary" (click)="onSubmit()" >SUBMIT</button>
+              &nbsp;&nbsp;
+              <button mat-raised-button color="warn" (click)="onCancel()">CANCEL</button>
+              <br>
+              <div style="margin-left:100px; margin-top:15px; font-size:16px;"><a href="forget">FORGET PASSWORD?</a></div>
+
+</div>
+</div>
+
+ <!-- <form action="action_page.php">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> -->

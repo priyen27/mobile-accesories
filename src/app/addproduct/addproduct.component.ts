@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-color:string[]=["RED","BLUE","GREEN","YELLOW","PINK","PURPLE","WHITE","BLACK","ORANGE","BROWN"];
+color:string[]=["RED","BLUE","GREEN","YELLOW","PINK","PURPLE","WHITE","BLACK","ORANGE","BROWN","LIGHT BLUE","LIGHT GREEN"];
 soharr:number[]=[];
 cat_arr:category[]=[];
 product_arr:product[]=[];
@@ -54,9 +54,8 @@ product_arr:product[]=[];
        alert("added succesfully");
        this._route.navigate(['/product']);
       }
-    );
-
-  }
+     );
+}
   oncancel(){
     this._route.navigate(['/product']);
   }

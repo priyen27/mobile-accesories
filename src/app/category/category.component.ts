@@ -74,16 +74,24 @@ flag:boolean=false;
   }
   onaddCategory()
       {
-        this._category.addCategory(new category(this.cat_name)).subscribe(
+        if(this.cat_arr.find(x=>x.cat_name==this.cat_name))
+        {
+          alert("Category Already Added");
+        }
+        else{
+           this._category.addCategory(new category(this.cat_name)).subscribe(
           (data:any)=>{
             this.cat_arr.push(new category(this.cat_name));
             this.CategorySource=new MatTableDataSource(this.cat_arr);
+            alert("record added successfully");
             this.getAllCategories();
-           alert("record added successfully");
            this.flag=false;
           }
+
         );
-         }
+      }
+    }
+
          oncancel(){
            this.flag=false;
          }

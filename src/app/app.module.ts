@@ -7,13 +7,18 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule} from '@angular/material';
+import {MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule, MatGridListModule, MatMenuModule} from '@angular/material';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { ProductComponent } from './product/product.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
+import { OrderComponent } from './order/order.component';
+import { RepairComponent } from './repair/repair.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 
 @NgModule({
@@ -24,7 +29,12 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     ProductComponent,
     AddproductComponent,
     MenuComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
+    HomepageComponent,
+    LoginComponent,
+    OrderComponent,
+    RepairComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +58,8 @@ import { UpdateproductComponent } from './updateproduct/updateproduct.component'
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    MatGridListModule,
+    MatMenuModule,
 
   ],
   providers: [],
