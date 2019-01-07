@@ -36,6 +36,9 @@ subject1:string;
       }
     )
   }
+  onCancel(){
+    this._route.navigate(['']);
+  }
   ngOnInit() {
   }
 

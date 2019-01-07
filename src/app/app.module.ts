@@ -7,7 +7,7 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule, MatGridListModule, MatMenuModule} from '@angular/material';
+import {MatNativeDateModule,MatDatepickerModule,MatDatepickerToggle,MatDatepickerToggleIcon,MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule, MatGridListModule, MatMenuModule} from '@angular/material';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { ProductComponent } from './product/product.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
@@ -19,6 +19,9 @@ import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './order/order.component';
 import { RepairComponent } from './repair/repair.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { BillComponent } from './bill/bill.component';
+import { AddbillComponent } from './addbill/addbill.component';
+import { BilldetailComponent } from './billdetail/billdetail.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     LoginComponent,
     OrderComponent,
     RepairComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    BillComponent,
+    AddbillComponent,
+    BilldetailComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +66,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     MatListModule,
     MatGridListModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
   providers: [],
