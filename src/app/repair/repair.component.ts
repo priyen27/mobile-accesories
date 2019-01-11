@@ -2,6 +2,8 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
 import { repairs } from '../classes/repair';
 import { RepairService } from '../service/repair.service';
+import { repairorder } from '../classes/repair_order';
+import { Router } from '@angular/router';
 //import { repair } from '../service/repair.service';
 @Component({
   selector: 'app-repair',
@@ -10,6 +12,10 @@ import { RepairService } from '../service/repair.service';
 })
 export class RepairComponent implements OnInit {
 
+  repair_order_arr:repairorder[]=[];
+  repair_order_amt:number;
+  repair_order_date:Date;
+  fk_repair_id:number;
   i;
   repair_arr:repairs[]=[];
   repair_del_arr:repairs[]=[];
@@ -40,13 +46,25 @@ export class RepairComponent implements OnInit {
     else
     {
       item.approve='approve';
+      this._repair.InsertRepairOrder(item).subscribe(
+        (data:repairorder[])=>{
+          // console.log(this.pro_soh);
+          // console.log(this.pro_color);
+          this.repair_order_arr.push(new repairorder(this.repair_order_amt,this.repair_order_date,this.fk_repair_id));
+          this.repair_order_arr.push(new repairorder(this.repair_order_amt,this.repair_order_date,this.fk_repair_id));
+         console.log(this.repair_order_arr);
+         alert("added succesfully");
+         this._route.navigate(['/repairorder']);
+        }
+       );
     }
   }
-  onUpdatestatus(item){
+  onUpdatestatus(item:repairs){
 
     if(item.status=='pending')
     {
       item.status='done';
+      this._route.navigate(['/updaterepair',item.repair_id]);
     }
     else
     {
@@ -75,7 +93,7 @@ export class RepairComponent implements OnInit {
     }
     console.log(this.repair_del_arr);
   }
-  constructor(private _repair:RepairService) { }
+  constructor(private _repair:RepairService,private _route:Router) { }
 
   ngOnInit() {
 

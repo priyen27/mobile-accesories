@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BillService } from '../service/bill.service';
 import { bill } from '../classes/bill';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addbill',
@@ -16,8 +17,11 @@ export class AddbillComponent implements OnInit {
   soharr:number[]=[];
   bill_arr:bill[]=[];
   i:number;
-  constructor(private _bill:BillService) { }
+  constructor(private _bill:BillService,private _route:Router) { }
   addform(){}
+  onsignup(){
+    this._route.navigate(["/user"]);
+  }
   onaddBill(){
     // this._bill.InsertBills(new bill(this.bill_id,this.bill_amount,this.date,this.qty).subscribe(
     //   (data:any)=>{

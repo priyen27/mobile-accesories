@@ -7,7 +7,7 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatNativeDateModule,MatDatepickerModule,MatDatepickerToggle,MatDatepickerToggleIcon,MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule, MatGridListModule, MatMenuModule} from '@angular/material';
+import {MatNativeDateModule,MatDatepickerModule,MatDatepickerToggle,MatDatepickerToggleIcon,MatButtonModule,MatCheckboxModule,MatProgressSpinnerModule,MatCardModule,MatSortModule,MatPaginatorModule,MatInputModule,MatTableModule,MatFormFieldModule,MatIconModule, MatSelect, MatOptionModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatListModule, MatGridListModule, MatMenuModule, MatRadioModule} from '@angular/material';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { ProductComponent } from './product/product.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
@@ -22,7 +22,12 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { BillComponent } from './bill/bill.component';
 import { AddbillComponent } from './addbill/addbill.component';
 import { BilldetailComponent } from './billdetail/billdetail.component';
-
+import { UserhomeComponent } from './userhome/userhome.component';
+import { UserComponent } from './user/user.component';
+import { UserupdateComponent } from './user/userupdate/userupdate.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { RepairorderComponent } from './repairorder/repairorder.component';
+import { RepairupdateComponent } from './repairupdate/repairupdate.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,13 @@ import { BilldetailComponent } from './billdetail/billdetail.component';
     ForgetpasswordComponent,
     BillComponent,
     AddbillComponent,
-    BilldetailComponent
+    BilldetailComponent,
+    UserhomeComponent,
+    UserComponent,
+    UserupdateComponent,
+    ManageuserComponent,
+    RepairorderComponent,
+    RepairupdateComponent
   ],
   imports: [
     BrowserModule,
@@ -67,8 +78,8 @@ import { BilldetailComponent } from './billdetail/billdetail.component';
     MatGridListModule,
     MatMenuModule,
     MatDatepickerModule,
-    MatNativeDateModule
-
+    MatNativeDateModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

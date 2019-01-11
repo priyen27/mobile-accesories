@@ -6,7 +6,7 @@ export class user{
     public mobile_no?:string,
     public gender?:string,
     public city?:string,
-    public type?:string,
-    public user_id?:number
+    public user_id?:number,
+    public type?:string
   ){}
 }

@@ -66,8 +66,6 @@ this._product.UpdateProduct(fd).subscribe(
 
     }
 
-
-
 }
 oncancel(){
   this._route.navigate(['/product']);

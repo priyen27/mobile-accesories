@@ -1,4 +1,5 @@
 <h1>ADD BILL</h1>
+<button mat-raised-button color="primary" style="margin-left: 1000px;" (click)="onsignup()"><h4>New User?</h4></button>
 <div class="container">
   <form (ngSubmit)="addform(f)" #f="ngForm">
 
@@ -29,7 +30,7 @@
       <label>QTY</label>
       <br>
       <mat-form-field class="example-full-width">
-        <mat-select placeholder="Select Soh" [(ngModel)]="qty" name="qty"
+        <mat-select placeholder="Select Soh" [(ngModel)]="qty" name="qty"p
         required id="qty" #qty1="ngModel">
           <mat-option *ngFor="let item of soharr" [value]="item">{{item}}</mat-option>
         </mat-select>

@@ -13,6 +13,12 @@ import { BillComponent } from './bill/bill.component';
 import { AddbillComponent } from './addbill/addbill.component';
 import { billdetail } from './classes/billdetails';
 import { BilldetailComponent } from './billdetail/billdetail.component';
+import { UserComponent } from './user/user.component';
+import { UserupdateComponent } from './user/userupdate/userupdate.component';
+import { ManageuserComponent } from './manageuser/manageuser.component';
+import { repairorder } from './classes/repair_order';
+import { RepairorderComponent } from './repairorder/repairorder.component';
+import { RepairupdateComponent } from './repairupdate/repairupdate.component';
 
 
 const arr:Routes=[
@@ -28,8 +34,12 @@ const arr:Routes=[
   {path:'forget',component:ForgetpasswordComponent},
   {path:'bill',component:BillComponent},
   {path:'addbill',component:AddbillComponent},
-  {path:'billdetails/:bill_id',component:BilldetailComponent}
-
+  {path:'billdetails/:bill_id',component:BilldetailComponent},
+  {path:'user',component:UserComponent},
+  {path:'editprofile/:user_id',component:UserupdateComponent},
+  {path:'manageuser',component:ManageuserComponent},
+  {path:'repairorder',component:RepairorderComponent},
+  {path:'updaterepair/:repair_id',component:RepairupdateComponent}
 ];
 
 

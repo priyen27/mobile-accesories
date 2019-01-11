@@ -48,6 +48,9 @@ export class OrderComponent implements OnInit {
       this.orderSource.data = this.order_arr;
     });
   }
+  onrepairingorder(){
+    this._route.navigate(['/repairorder']);
+  }
   onallorder(){
     this._order.getAllOrder().subscribe((data: order[]) => {
       this.order_arr = data;
