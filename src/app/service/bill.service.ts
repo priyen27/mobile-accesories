@@ -28,9 +28,9 @@ export class BillService {
   getUserName(){
     return this._http.get(this.bill);
       }
-      getMoreBillDetails(bill_id) {
-        console.log(bill_id);
-       return this._http.get(this.billdet+bill_id);
+      getMoreBillDetails(fk_bill_id:number) {
+        console.log(fk_bill_id);
+       return this._http.get(this.billdet+fk_bill_id);
      }
   constructor(private _http:HttpClient) { }
 }

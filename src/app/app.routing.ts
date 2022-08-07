@@ -34,7 +34,7 @@ const arr:Routes=[
   {path:'forget',component:ForgetpasswordComponent},
   {path:'bill',component:BillComponent},
   {path:'addbill',component:AddbillComponent},
-  {path:'billdetails/:bill_id',component:BilldetailComponent},
+  {path:'billdetails/:fk_bill_id',component:BilldetailComponent},
   {path:'user',component:UserComponent},
   {path:'editprofile/:user_id',component:UserupdateComponent},
   {path:'manageuser',component:ManageuserComponent},

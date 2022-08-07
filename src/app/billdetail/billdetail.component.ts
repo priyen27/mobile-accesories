@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class BilldetailComponent implements OnInit {
   bill_det_arr:billdetail[]=[];
-  bill_id: number;
+  fk_bill_id: number;
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort)
@@ -26,11 +26,12 @@ export class BilldetailComponent implements OnInit {
   constructor(private _bill:BillService,private _route:Router,private _acroute:ActivatedRoute) { }
 
   ngOnInit() {
-    this.bill_id=this._acroute.snapshot.params['bill_id'];
-    this._bill.getMoreBillDetails(this.bill_id).subscribe(
-      (data:any)=>{
+  this.fk_bill_id=this._acroute.snapshot.params['fk_bill_id'];
+    this._bill.getMoreBillDetails(this.fk_bill_id).subscribe(
+      (data:billdetail[])=>{
         this.bill_det_arr=data;
         console.log(data);
+        console.log(this.bill_det_arr);
         this.billdetailSource.data = this.bill_det_arr;
 
         this.billdetailSource.paginator = this.paginator;

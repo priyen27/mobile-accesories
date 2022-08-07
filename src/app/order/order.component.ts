@@ -58,6 +58,14 @@ export class OrderComponent implements OnInit {
       this.orderSource.data = this.order_arr;
     });
   }
+  onDelete(item){
+    this._order.deleteOrder(item).subscribe(
+      (data:any)=>{
+        this.order_arr.splice(this.order_arr.indexOf(item),1);
+        this.orderSource=new MatTableDataSource(this.order_arr);
+      }
+    );
+ }
   onUpdatestatus(item:order){
     this.bill_details_arr.splice(0,this.bill_details_arr.length);
     this.bill_amount=this.order_amount;
@@ -87,19 +95,12 @@ export class OrderComponent implements OnInit {
           }
         );
         alert("added successfully");
+        this.onDelete(item);
         this._route.navigate(['/bill']);
       }
     );
 
   }
-  onDelete(item){
-    this._order.deleteOrder(item).subscribe(
-      (data:any)=>{
-        this.order_arr.splice(this.order_arr.indexOf(item),1);
-        this.orderSource=new MatTableDataSource(this.order_arr);
-      }
-    );
- }
   onMultipledel(){
     this._order.deleteAllOrder(this.order_del_arr).subscribe((data: any) => {
       console.log(this.order_del_arr);

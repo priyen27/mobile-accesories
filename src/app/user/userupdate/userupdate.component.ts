@@ -15,8 +15,8 @@ export class UserupdateComponent implements OnInit {
   password:string="";
   address:string="";
   mobile_no:string="";
-  gender_arr:string[]=["MALE","FEMALE"];
-  gender:string="MALE";
+  gender_arr:string[]=["male","female"];
+  gender:string="male";
   city_arr:string[]=["Ahmedabad","Surat","Vadodara","Rajkot","Morbi","Mahesana","Patan"]
   city:string="";
   type_arr:string[]=["User","Admin"];

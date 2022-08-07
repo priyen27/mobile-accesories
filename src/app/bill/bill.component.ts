@@ -46,7 +46,7 @@ this._route.navigate(['/addbill']);
 
       });
     this._bill.getUserName().subscribe((data: bill[]) => {
-      console
+
       this.bill_arr = data;
       this.user_id=data[0].fk_user_id
       console.log(data);

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   user_name:string;
   password:string;
+  flag:boolean=false;
   hide:boolean=true;
   type:string;
   constructor(private _user:UserService,private _route:Router) { }
